@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ThakhiDriver</string>
+    <string name="Thakhi2019">Thakhi 2019</string>
+    <string name="login">Login</string>
+    <string name="title_activity_entregas">Map</string>
+    <string name="title_activity_ubicacion">Map</string>
+</resources>
