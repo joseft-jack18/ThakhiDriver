@@ -132,7 +132,7 @@ class UbicacionActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnM
                 //GuardarUbicacion(ClsConexion.dni,location.latitude, location.longitude)
 
                 placeMarker(currentLatLong)
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLong, 12f))
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLong, 16f))
             }
         }
     }
