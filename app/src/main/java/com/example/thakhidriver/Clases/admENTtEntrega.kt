@@ -1,5 +1,5 @@
 package com.example.thakhidriver.Clases
 
-class admENTtEntrega (var VECid:Int, var CONdni:String, var VEHid:Int,
-                      var VECestado:String, var VEClatitud:Double,
-                      var VEClongitud:Double)
+class admENTtEntrega (var ENTid:Int, var ENTdescripciom:String, var ENTtipo:String,
+                      var ENTfechahora:String, var CLInombre:String, var CLIapellido:String,
+                      var ENTprecio:Double, var ENTestado:String)

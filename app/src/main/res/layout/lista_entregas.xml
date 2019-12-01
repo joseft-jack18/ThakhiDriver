@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="#fff">
 
@@ -44,6 +44,7 @@
                 android:layout_toRightOf="@+id/producto"
                 android:text="Descripcion"
                 android:textColor="#000"
+                android:id="@+id/tv_descripcion"
                 android:textSize="14sp"/>
 
             <TextView
@@ -69,7 +70,7 @@
                 android:textSize="15sp"/>
 
             <TextView
-                android:id="@+id/txtestado"
+                android:id="@+id/tv_estado"
                 android:layout_width="20dp"
                 android:layout_height="100dp"
                 android:layout_alignParentEnd="true"
