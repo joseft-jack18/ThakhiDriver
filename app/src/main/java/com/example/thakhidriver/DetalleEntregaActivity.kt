@@ -29,8 +29,8 @@ class DetalleEntregaActivity : AppCompatActivity() {
             },
             Response.ErrorListener {  }
         )
-        rq.add(sr)*/
+        rq.add(sr)
 
-        codigo.text = admENTtEntrega.ENTid.toString()
+        codigo.text = admENTtEntrega.ENTid.toString()*/
     }
 }
