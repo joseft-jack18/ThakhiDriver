@@ -65,12 +65,12 @@ class UbicacionActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnM
             //Toast.makeText(this,
             //   "Random Number : ${lat}, ${lon}",
             //   Toast.LENGTH_LONG).show()
-
+            setUpMap()
             GuardarUbicacion(ClsConexion.dni,lat,lon)
             // Schedule the task to repeat after 8 second
             mHandler.postDelayed(
                 mRunnable, // Runnable
-                8000 // Delay in milliseconds
+                5000 // Delay in milliseconds
             )
 
         }
