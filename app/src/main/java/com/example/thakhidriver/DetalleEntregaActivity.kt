@@ -6,6 +6,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
+import com.example.thakhidriver.Clases.admENTtEntrega
 import com.example.thakhidriver.Conexion.ClsConexion
 import kotlinx.android.synthetic.main.activity_detalle_entrega.*
 
@@ -15,7 +16,7 @@ class DetalleEntregaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_entrega)
 
-        var url= ClsConexion.url + "VerDetalleEntrega.php?ENTid=" + ClsConexion.id_entrega
+        /*var url= ClsConexion.url + "VerDetalleEntrega.php?ENTid=" + ClsConexion.id_entrega
         var rq= Volley.newRequestQueue(this)
 
         val sr = JsonArrayRequest( Request.Method.GET, url, null,
@@ -28,6 +29,8 @@ class DetalleEntregaActivity : AppCompatActivity() {
             },
             Response.ErrorListener {  }
         )
-        rq.add(sr)
+        rq.add(sr)*/
+
+        codigo.text = admENTtEntrega.ENTid.toString()
     }
 }

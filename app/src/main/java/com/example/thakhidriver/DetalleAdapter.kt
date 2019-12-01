@@ -8,6 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.thakhidriver.Clases.admENTtEntrega
+import com.example.thakhidriver.Clases.admENTtEntrega.Companion.CLIapellido
+import com.example.thakhidriver.Clases.admENTtEntrega.Companion.ENTdescripciom
+import com.example.thakhidriver.Clases.admENTtEntrega.Companion.ENTestado
+import com.example.thakhidriver.Clases.admENTtEntrega.Companion.ENTid
+import com.example.thakhidriver.Clases.admENTtEntrega.Companion.ENTprecio
 import com.example.thakhidriver.Conexion.ClsConexion
 import kotlinx.android.synthetic.main.lista_entregas.view.*
 
@@ -30,7 +35,14 @@ class DetalleAdapter (var con: Context, var list:ArrayList<admENTtEntrega>) : Re
         holder.itemView.entrega_cv.setOnClickListener {
             var i= Intent(con,DetalleEntregaActivity::class.java)
             //i.putExtra("serviceid",list[position].id)
-            ClsConexion.id_entrega=list[position].ENTid
+
+            ENTid=list[position].ENTid
+            ENTdescripciom=list[position].ENTdescripciom
+            ENTprecio=list[position].ENTprecio
+            CLIapellido=list[position].CLInombre
+            CLIapellido=list[position].CLIapellido
+            ENTestado=list[position].ENTestado
+
             con.startActivity(i)
         }
     }
