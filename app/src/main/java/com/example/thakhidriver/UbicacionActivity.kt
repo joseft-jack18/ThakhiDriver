@@ -23,6 +23,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.activity_ubicacion.*
 
 class UbicacionActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
@@ -50,6 +51,10 @@ class UbicacionActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnM
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
+        /*btnubicacion.setOnClickListener {
+            if(btnubicacion)
+        }*/
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         mHandler = Handler()
@@ -58,8 +63,8 @@ class UbicacionActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnM
             //lat = (mRandom1.nextInt(100)).toDouble()
             //lon = (mRandom2.nextInt(100)).toDouble()
             //Toast.makeText(this,
-             //   "Random Number : ${lat}, ${lon}",
-             //   Toast.LENGTH_LONG).show()
+            //   "Random Number : ${lat}, ${lon}",
+            //   Toast.LENGTH_LONG).show()
 
             GuardarUbicacion(ClsConexion.dni,lat,lon)
             // Schedule the task to repeat after 8 second

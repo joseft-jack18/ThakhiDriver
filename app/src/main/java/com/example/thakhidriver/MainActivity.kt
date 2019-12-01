@@ -22,6 +22,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        entregas.setOnClickListener {
+            var i= Intent(this,EntregasActivity::class.java)
+            startActivity(i)
+        }
+
         perfil.setOnClickListener {
             var i= Intent(this,PerfilActivity::class.java)
             startActivity(i)
