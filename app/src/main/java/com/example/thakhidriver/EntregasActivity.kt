@@ -17,7 +17,7 @@ class EntregasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entregas)
 
-        var url:String= ClsConexion.url + "ListarEntregas.php"
+        var url:String= ClsConexion.url + "ListarEntregas.php?CONdni=" + ClsConexion.dni
         var list=ArrayList<admENTtEntrega>()
 
         var rq= Volley.newRequestQueue(this)
@@ -27,15 +27,20 @@ class EntregasActivity : AppCompatActivity() {
                 for(x in 0..response.length()-1){
                     list.add(
                         admENTtEntrega(
-                            response.getJSONObject(x).getInt("id"),
-                            response.getJSONObject(x).getString("name"),
-                            response.getJSONObject(x).getString("photo")
+                            response.getJSONObject(x).getInt("ENTid"),
+                            response.getJSONObject(x).getString("ENTdescripcion"),
+                            response.getJSONObject(x).getString("ENTtipo"),
+                            response.getJSONObject(x).getString("ENTfechahora"),
+                            response.getJSONObject(x).getString("CLInombre"),
+                            response.getJSONObject(x).getString("CLIapellido"),
+                            response.getJSONObject(x).getDouble("ENTprecio"),
+                            response.getJSONObject(x).getString("ENTestado")
                         )
                     )
                 }
                 var adp=DetalleAdapter(this,list)
                 entregas_rv.adapter=adp
-                entregas_rv.layoutManager= GridLayoutManager(this,2)
+                entregas_rv.layoutManager= GridLayoutManager(this,1)
             },
             Response.ErrorListener {  })
         rq.add(jar)
