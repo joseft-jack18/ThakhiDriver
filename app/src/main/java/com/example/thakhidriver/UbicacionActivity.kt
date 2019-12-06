@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.content.res.ResourcesCompat
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -51,33 +52,33 @@ class UbicacionActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnM
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        /*btnubicacion.setOnClickListener {
-            if(btnubicacion)
-        }*/
-
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-
         mHandler = Handler()
-        mRunnable = Runnable {
-            // ejemplos de random
-            //lat = (mRandom1.nextInt(100)).toDouble()
-            //lon = (mRandom2.nextInt(100)).toDouble()
-            //Toast.makeText(this,
-            //   "Random Number : ${lat}, ${lon}",
-            //   Toast.LENGTH_LONG).show()
-            setUpMap()
-            GuardarUbicacion(ClsConexion.dni,lat,lon)
-            // Schedule the task to repeat after 8 second
-            mHandler.postDelayed(
-                mRunnable, // Runnable
-                5000 // Delay in milliseconds
-            )
 
+        btn_mostrar.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                mRunnable = Runnable {
+                    setUpMap()
+                    GuardarUbicacion(ClsConexion.dni,lat,lon)
+                    // Schedule the task to repeat after 8 second
+                    mHandler.postDelayed(
+                        mRunnable, // Runnable
+                        8000 // Delay in milliseconds
+                    )
+
+                }
+                mHandler.postDelayed(
+                    mRunnable, // Runnable
+                    8000 // Delay in milliseconds
+                )
+            } else {
+                mHandler.removeCallbacks(mRunnable);
+            }
         }
-        mHandler.postDelayed(
-            mRunnable, // Runnable
-            5000 // Delay in milliseconds
-        )
+    }
+
+    fun EnviarUbicacion(){
+
     }
 
     /**
