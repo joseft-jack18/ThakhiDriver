@@ -128,7 +128,7 @@
                     android:layout_width="60dp"
                     android:layout_height="55dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/valoracion" />
+                    android:src="@drawable/listaentrega" />
 
                 <TextView
                     android:layout_width="match_parent"
