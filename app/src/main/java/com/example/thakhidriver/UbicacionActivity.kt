@@ -57,6 +57,7 @@ class UbicacionActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnM
 
         btn_mostrar.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
+                ClsConexion.num = 1
                 mRunnable = Runnable {
                     setUpMap()
                     GuardarUbicacion(ClsConexion.dni,lat,lon)
@@ -72,6 +73,7 @@ class UbicacionActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnM
                     8000 // Delay in milliseconds
                 )
             } else {
+                ClsConexion.num = 0
                 mHandler.removeCallbacks(mRunnable);
             }
         }

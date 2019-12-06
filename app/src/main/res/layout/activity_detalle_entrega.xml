@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fff"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".DetalleEntregaActivity">
 
     <TextView
@@ -28,9 +30,7 @@
         android:paddingHorizontal="15dp"
         android:textSize="18dp"
         android:text="Descripcion"
-        android:textColor="#000"
-        app:layout_constraintTop_toBottomOf="@+id/codigo"
-        tools:layout_editor_absoluteX="0dp" />
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/costo"
@@ -41,8 +41,6 @@
         android:textSize="18dp"
         android:text="Costo"
         android:textColor="#000"
-        tools:layout_editor_absoluteX="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/descripcion"
         />
 
     <TextView
@@ -53,9 +51,17 @@
         android:paddingHorizontal="15dp"
         android:textSize="18dp"
         android:text="Cliente"
-        android:textColor="#000"
-        app:layout_constraintTop_toBottomOf="@+id/costo"
-        tools:layout_editor_absoluteX="0dp" />
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/celular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingHorizontal="15dp"
+        android:textSize="18dp"
+        android:text="Celular"
+        android:textColor="#000" />
 
     <TextView
         android:id="@+id/estado"
@@ -65,53 +71,77 @@
         android:paddingHorizontal="15dp"
         android:textSize="18dp"
         android:text="Estado"
-        android:textColor="#000"
-        app:layout_constraintTop_toBottomOf="@+id/cliente"
-        tools:layout_editor_absoluteX="0dp" />
+        android:textColor="#000" />
 
-    <Switch
-        android:id="@+id/status"
-        android:layout_width="wrap_content"
+    <RadioGroup
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/opciones_estado"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/pendiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:checked="false"
+            android:textColor="#000"
+            android:text="Pendiente" />
+
+        <RadioButton
+            android:id="@+id/entregado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:textColor="#000"
+            android:text="Entregado" />
+
+        <RadioButton
+            android:id="@+id/no_entregado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:textColor="#000"
+            android:text="No Entregado" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Switch"
-        android:outlineAmbientShadowColor="#41bfbf"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintStart_toStartOf="@+id/estado"
-        app:layout_constraintTop_toBottomOf="@+id/cliente" />
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/llamar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:clickable="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/estado"
-        app:srcCompat="@android:drawable/stat_sys_phone_call" />
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="50dp"
+            app:srcCompat="@drawable/camara" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/camara"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:clickable="true"
-        app:layout_constraintStart_toEndOf="@+id/llamar"
-        app:layout_constraintTop_toBottomOf="@+id/estado"
-        app:srcCompat="@android:drawable/ic_menu_camera" />
+        <ImageView
+            android:id="@+id/ubicacion_cliente"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="50dp"
+            app:srcCompat="@drawable/brujula" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/ubicacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/camara"
-        app:layout_constraintTop_toBottomOf="@+id/estado"
-        app:srcCompat="@drawable/ubicacion" />
+        <ImageView
+            android:id="@+id/llamada"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/llamada" />
 
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/guardar"
+        android:layout_width="283dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/btn_guardar" />
+
+</LinearLayout>

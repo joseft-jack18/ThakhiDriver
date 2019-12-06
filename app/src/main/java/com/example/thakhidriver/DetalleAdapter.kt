@@ -33,10 +33,11 @@ class DetalleAdapter (var con: Context, var list:ArrayList<admENTtEntrega>) : Re
             list[position].ENTprecio,list[position].CLInombre,list[position].CLIapellido,list[position].ENTestado)
 
         holder.itemView.entrega_cv.setOnClickListener {
-            var i= Intent(con,DetalleEntregaActivity::class.java)
-            //i.putExtra("serviceid",list[position].id)
+            var i= Intent(con,Splash2Activity::class.java)
+            //i.putExtra("ENTid",list[position].ENTid)
 
             ENTid=list[position].ENTid
+            ClsConexion.id_entrega=list[position].ENTid
             ENTdescripciom=list[position].ENTdescripciom
             ENTprecio=list[position].ENTprecio
             CLIapellido=list[position].CLInombre
